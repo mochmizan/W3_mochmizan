@@ -1,14 +1,25 @@
 #Soal 3
-class persegi:
-  def __init__(self, sisi):
-    self.sisi = int(sisi)
+class Shape:
+  width = 0
+  def __init__(self, width):
+    self.width = width
 
-  def luas(self):
-    return (self.sisi**2)
+class Square(Shape):
+  name = "Square"
+  def get_area(self):
+    return self.width ** 2
 
-  def keliling(self):
-    return (self.sisi*4)
+class Triangle(Shape):
+  name = "Triangle"
+  height = 0
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
 
-n = int(input("Masukkan sisi Persegi: "))
-print("Luas Persegi:", persegi(n).luas())
-print("Keliling Persegi:", persegi(n).keliling())
+  def get_area(self):
+    return 0.5 * self.width * self.height
+
+SquareX = Square(5)
+TriangleY = Triangle(5, 3)
+print("Luas SquareX   :", SquareX.get_area())
+print("Luas TriangleY :", TriangleY.get_area())
