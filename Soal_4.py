@@ -1,19 +1,23 @@
 #Soal 4
-class Shark:
-  def __init__(self, name):
-    self.name = name
+class Koordinat2D:
+  x = 0
+  y = 0
 
-  def swim(self):
-    print(self.name + " is swimming.")
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
 
-  def be_awesome(self):
-    print(self.name + " is being awesome.")
+class Koordinat3D(Koordinat2D):
+  z = 0
 
-def main():
-  # Set name of Shark object
-  sammy = Shark("Sammy")
-  sammy.swim()
-  sammy.be_awesome()
+  def __init__(self, x, y, z):
+    super().__init__(x, y)
+    self.z = z
 
-if __name__ == "__main__":
-  main()
+  def tampilkan_koord(self):
+    print('x = ', self.x)
+    print('y = ', self.y)
+    print('z = ', self.z)
+
+titik1 = (Koordinat3D(1, 2, 3))
+titik1.tampilkan_koord()
